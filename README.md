@@ -32,3 +32,7 @@ To get a local copy of MovieFix up and running, follow these simple steps:
 3. *Start the Project*:
    ```sh
    npm start
+
+4. *Add .env file on root level*
+   ```sh
+    REACT_APP_API_KEY=YOUR_API_KEY_HERE
