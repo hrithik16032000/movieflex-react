@@ -1,0 +1,58 @@
+.movie-overview {
+    z-index: 2000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffff;
+    color: black;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 200px; /* Adjust as needed */
+}
+
+.movie:hover .movie-overview {
+    transform: translateY(0);
+}
+.movie-card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.movie {
+    position: relative;
+    width: 200px; /* Adjust as needed */
+    cursor: pointer;
+    margin-right: 20px; /* Space between cards and details */
+    /* Additional styling as needed */
+}
+
+.movie-overview {
+    z-index: 2000;
+    position: absolute;
+    bottom: -100%; /* Start off the screen */
+    left: 0;
+    right: 0;
+    background: white;
+    color: black;
+    padding: 10px;
+    transition: bottom 0.3s ease-in-out;
+    /* overflow: hidden; */
+    max-height: 200px; /* Adjust as needed */
+}
+
+.movie:hover .movie-overview {
+    bottom: 0; /* Bring it into view */
+}
+
+.movie-details {
+    flex: 1; /* Take up remaining space */
+    max-width: 400px; /* Adjust as needed */
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

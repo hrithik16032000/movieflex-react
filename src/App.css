@@ -1,38 +1,329 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: var(--font-roboto);
+  background-color: #212426;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.app {
+  padding: 1rem;
+  display: block;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  margin-top: 5px;
+  font-family: "Inter", sans-serif;
+  color: rgb(229, 9, 20);
+  position: absolute;
+  width: 150px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Example margin */
+  top: 20px; /* Adjust top position */
+  left: 30px; /* Adjust left position */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.top-loader{
+  height: 10px;
+}
+
+.year {
+  font-size: 40px; /* Adjust font size as needed */
+  color: #ffffff;
+  font-weight: bold;
+  margin: 60px 0px 0px 100px; /* Add margin to separate from movies */
+  text-align: left; 
+}
+
+.search-bar-container {
+  flex: 1;
+}
+
+.empty {
+  width: 100%;
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty h2 {
+  font-size: 1.25rem;
+  color: #f9d3b4;
+  font-family:  "Inter", sans-serif;
+}
+
+.container {
+  width: 100%;
+  margin-top: 0rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 310px;
+  height: 510px;
+  margin: 1.5rem;
+  cursor: pointer;
+
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+}
+
+.movie div:nth-of-type(1) {
+  position: absolute;
+  padding: 16px;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  color: #f9d3b4;
+}
+
+.movie:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05, 1.05);
+}
+
+.movie div:nth-of-type(2) {
+  width: 100%;
+  height: 100%;
+}
+
+.movie div:nth-of-type(2) img {
+  height: 100%;
+  width: 100%;
+}
+
+.movie div:nth-of-type(3) {
+  z-index: 900;
+  background-color: #343739;
+  padding: 16px 24px 24px 24px;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.movie div:nth-of-type(3) span {
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+.movie div:nth-of-type(3) h3 {
+  margin-top: 5px;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+}
+
+.movie:hover div:nth-of-type(2) {
+  height: 100%;
+  opacity: 0.3;
+}
+
+.movie:hover div:nth-of-type(3) {
+  background-color: transparent;
+}
+
+.movie:hover div:nth-of-type(1) {
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    flex-direction: row;
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .headerSearch {
+    margin-bottom: 10px;
+    flex-direction: column;
   }
+  .app {
+    padding: 4rem 2rem;
+  }
+
+  .search {
+    padding: 1rem 1.75rem;
+    width: 100%;
+  }
+
+  .search input {
+    font-size: 1rem;
+  }
+
+  .search img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .header {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .search-bar-container {
+    width: 100%;
+  }
+
+  .searchBar {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .searchBar form {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .searchBar input[type="text"] {
+    flex: 1;
+    width: calc(100% - 110px); /* Adjust based on button size */
+  }
+
+  .searchBar button {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .headerSearch {
+    margin-bottom: 10px;
+  }
+  .app {
+    padding: 4rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    margin-top: 2rem;
+  }
+
+  .search-bar-container {
+    width: 100%;
+  }
+
+  .movie {
+    width: "100%";
+    margin: 1rem;
+  }
+
+  .searchBar input[type="text"] {
+    width: calc(100% - 90px); /* Adjust based on button size */
+  }
+
+  .searchBar button {
+    width: 80px;
+  }
+}
+
+/*CSS for Header & Filter */
+
+.header {
+  position: sticky;
+  top: 0; /* Ensures the sticky behavior */
+  background-color: #212426;
+  z-index: 999;
+  padding: 10px;
+  width: 100%; /* Ensures the header spans the width of the viewport */
+}
+
+.headerSearch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.moviefix-logo {
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  color: rgb(229, 9, 20);
+  width: 150px; 
+  height: auto;
+  font-weight: bold;
+}
+
+.filter-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px; /* Space between rows */
+}
+
+.filter-btns button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.filter-btns button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#clear-btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: rgb(229, 9, 20);
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+#clear-btn:active {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow effect on click */
+}
+
+#clear-btn:hover {
+  background-color: rgb(197, 8, 17);
+}
+
+.headerFilter{
+  padding-top: 10px;
+  color: #ffffff;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
 }

@@ -1,0 +1,93 @@
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: "-50%";
+  transform: translate(-50%, -50%);
+  background-color: #212426;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(99, 98, 98, 0.604);
+  z-index: 2000;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: "rgba(0, 0, 0, 0.75)";
+  z-index: 999;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  object-fit: cover;
+  padding: 10px; /* Adjust padding to get the desired spacing */
+  box-sizing: border-box;
+}
+
+.close-button {
+  position: absolute;
+  top: 0; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  background: transparent;
+  color: #f9f9f9;
+  border: none;
+  font-size: 44px; /* Adjust size as needed */
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: red; /* Change color on hover if desired */
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  color: #fcfcfc;
+  margin-bottom: 10px;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.modal-image:hover {
+  transform: scale(1.05);
+}
+
+.modal-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.modal-info p {
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #d5d5d5;
+  transition: all 0.3s ease;
+}
+
+.modal-info p:hover {
+  color: #ffffff;
+}
+
+.modal-info strong {
+  font-weight: bold;
+  color: #ffffff;
+}
