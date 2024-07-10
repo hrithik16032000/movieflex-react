@@ -22,11 +22,11 @@ MovieFix is a web application that allows users to watch movies over time period
 To get a local copy of MovieFix up and running, follow these simple steps:
 
 1. *Clone the Repository*:
-   sh
-   git clone <repository-url> 
+   ```sh
+   git clone https://github.com/hrithik16032000/movieflex-react
 
 2. **Install the Packages**:
-   sh
+   ```sh
    npm install 
 
 3. *Start the Project*:
